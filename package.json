@@ -1,0 +1,72 @@
+{
+  "name": "koa-server-boilerplate",
+  "version": "1.0.0",
+  "description": "Nodejs server boilerplate server built on koa framework and koa-router",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon dist/server.js",
+    "server": "concurrently \"npm run start\" \"gulp\"",
+    "debug": "nodemon --inspect dist/server.js",
+    "test": "mocha -r ts-node/register test/**/*.ts --exit || true",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    "prettier": "prettier -c src/**/* test/**/*",
+    "precommit": "npm run prettier && npm run lint",
+    "prepush": "npm test",
+    "build": "gulp"
+  },
+  "author": "Rilwan Adams <adamzrealone@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "koa": "2.11.0",
+    "koa-compose": "^4.1.0",
+    "koa-helmet": "^5.2.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "7.4.0",
+    "koa2-cors": "^2.0.6",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/koa": "2.0.52",
+    "@types/koa-helmet": "^3.1.2",
+    "@types/koa-morgan": "^1.0.4",
+    "@types/koa-router": "7.0.42",
+    "@types/koa2-cors": "^2.0.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.0.10",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "concurrently": "^5.0.0",
+    "del": "5.1.0",
+    "editorconfig": "^0.15.3",
+    "gulp": "4.0.2",
+    "gulp-typescript": "6.0.0-alpha.1",
+    "husky": "^3.1.0",
+    "mocha": "^6.1.4",
+    "nodemon": "1.19.4",
+    "prettier": "^1.18.2",
+    "ts-loader": "6.2.1",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "3.7.2",
+    "typescript-tslint-plugin": "^0.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dudewith3faces/nodejs-koa-starterpack"
+  },
+  "bugs": {
+    "url": "https://github.com/dudewith3faces/nodejs-koa-starterpack/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit",
+      "pre-push": "npm run prepush"
+    }
+  }
+}

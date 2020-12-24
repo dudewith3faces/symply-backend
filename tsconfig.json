@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin",
+        "alwaysShowRuleFailuresAsWarnings": false,
+        "ignoreDefinitionFiles": true,
+        "configFile": "./tslint.json",
+        "suppressWhileTypeErrorsPresent": false
+      }
+    ],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "allowJs": true,
+    "checkJs": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/", "src/typings/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/typings", "test/**/*"]
+}
