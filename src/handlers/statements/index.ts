@@ -1,1 +1,1 @@
-export * from './user.statements';
+export * from './fact.statements';

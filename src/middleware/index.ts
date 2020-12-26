@@ -6,7 +6,6 @@ import { morgan } from './morgan';
 import { setError } from './setError';
 
 export { app } from './koa';
-export * from './passport';
 
 export const allMiddleware = compose([
   cors,

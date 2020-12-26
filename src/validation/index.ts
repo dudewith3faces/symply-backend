@@ -1,1 +1,1 @@
-export * from './user.validation';
+export * from './fact.validation';

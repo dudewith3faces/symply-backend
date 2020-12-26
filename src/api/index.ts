@@ -1,9 +1,9 @@
 import Router from 'koa-router';
-import AuthAPI from './auth.api';
+import FactAPI from './fact.api';
 
 export default class Routes {
   private readonly index = new Router({ prefix: '/api' });
-  private readonly auth = new AuthAPI().route();
+  private readonly fact = new FactAPI().route();
 
   constructor() {
     this.route();
@@ -15,6 +15,6 @@ export default class Routes {
   }
 
   private api() {
-    this.index.use(this.auth);
+    this.index.use(this.fact);
   }
 }
