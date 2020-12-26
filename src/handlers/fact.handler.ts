@@ -25,7 +25,7 @@ export class FactHandler {
   }
 
   public static async deleteFact(id: string): Promise<void> {
-    (await MySQL.symply.query(FactStatement.deleteFact(), [id])) as any;
+    await MySQL.symply.query(FactStatement.deleteFact(), [id]);
     return;
   }
 }

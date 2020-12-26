@@ -20,16 +20,12 @@ export class FactController {
   public static async add(ctx: BaseContext): Promise<void> {
     // @ts-ignore: a base response interface should be created
     const body: IFact = ctx.request.body;
-    console.log(body);
 
     FactValidation.add(body);
 
-    if ((await FactHandler.findFact(body.id))?.id) {
-      ctx.status = 200;
-      ctx.body = {} as IResponse;
-    }
+    if (!(await FactHandler.findFact(body.id))?.id)
+      await FactHandler.save(body);
 
-    await FactHandler.save(body);
     ctx.status = 200;
     ctx.body = {} as IResponse;
     return;
