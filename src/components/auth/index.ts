@@ -1,1 +1,0 @@
-export { AuthAPI } from './Api';

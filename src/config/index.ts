@@ -1,3 +1,7 @@
-export * from './keys';
+import { config } from 'dotenv';
 
-export * from './middleware';
+config();
+
+export { log } from './log';
+export { PORT, hostname } from './server';
+export * from './encrpty';
