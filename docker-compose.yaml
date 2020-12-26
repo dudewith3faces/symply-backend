@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  mysql-symply:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+    ports:
+      - '3306:3306'
