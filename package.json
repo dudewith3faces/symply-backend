@@ -20,7 +20,7 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "8.2.0",
     "jsonwebtoken": "^8.5.1",
-    "koa": "2.11.0",
+    "koa": "2.15.4",
     "koa-bodyparser": "^4.3.0",
     "koa-compose": "^4.1.0",
     "koa-helmet": "^5.2.0",
